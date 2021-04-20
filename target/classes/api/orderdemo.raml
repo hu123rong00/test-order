@@ -1,0 +1,33 @@
+#%RAML 1.0
+title: OrderDemo
+description: Order API Demo
+
+/order:
+  get:
+    queryParameters:
+      orderNum:
+        required: false
+        example:
+          "123"
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "orderNum" : "123",
+                "productName": "PC"
+              }
+      500:
+        body:
+          application/json:
+            example:
+              "Exception 500>>>"
+  post:
+    body:
+      application/json:
+        example:
+         {
+            "orderNum" : "456",
+            "productName": "Phone"
+         }
